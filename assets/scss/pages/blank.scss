@@ -1,0 +1,63 @@
+.page-blank{
+    .box-left{
+        padding: 92px 15px 30px 120px;
+    }
+    .box-right{
+        padding: 30px 173px 30px 15px;
+        height: 100vh;
+        overflow: auto;
+        display: flex;
+        align-items: center;
+    }
+    .row-blank{
+        position: relative;
+        z-index: 1;
+    }
+    .form{
+        &-style{
+            padding: 40px 75px;
+            width: 520px;
+            margin-left: auto;
+            height: fit-content;
+        }
+        &-logo{
+            width: 110px;
+            height: 110px;
+        }
+        &-input{
+            background-color: #FBFBFC;
+            height: 48px;
+        }
+        &-btn{
+            width: 100%;
+            height: 48px;
+        }
+    }
+    &-title{
+        font-size: 65px;
+    }
+    &-description{
+        font-size: 24px;
+        max-width: 546px;
+    }
+    .link-forgot-password{
+        color: $color-tenth;
+        font-size: $font-size-normal; 
+    }
+    .group-code{
+        &-input{
+            display: inline-block;
+            width: 35px;
+            margin-right: 27px;
+            text-align: center;
+            font-size: 25px;
+            color: $color-primary;
+            font-family:  $font-second;
+            border: none;
+            border-bottom: 1.5px solid #949494;
+            &:last-child{
+                margin-right: 0;
+            }
+        }
+    }
+}

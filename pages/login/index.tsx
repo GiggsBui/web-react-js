@@ -1,17 +1,13 @@
 import { NextPage } from 'next';
 import React, { useEffect } from 'react';
-import DefaultLayout from '../../layouts/default';
-// import { authService } from '../../services/auth';
+import BlankLayout from '../../layouts/blank';
 
 const AboutPage: NextPage = () => {
     useEffect(() => {
     }, []);
     return (
-        <DefaultLayout>
-            <main>
-                <h1 className="login-page">Page Login</h1>
-            </main>
-        </DefaultLayout>
+        <BlankLayout>
+        </BlankLayout>
     );
 };
 export default AboutPage;

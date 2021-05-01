@@ -2,10 +2,8 @@
 import axios from 'axios';
 import getConfig from 'next/config';
 import Router from 'next/router';
-const { publicRuntimeConfig } = getConfig();
-const $axios = axios.create({
-    baseURL: publicRuntimeConfig.backendUrl,
-});
+const { publicConfig } = getConfig();
+const $axios = axios.create({ baseURL: publicConfig.backendUrl});
 
 $axios.interceptors.request.use(
     (req) => {
@@ -14,7 +12,8 @@ $axios.interceptors.request.use(
         return req;
     },
     (err) => {
-        if (err) return Promise.reject(err);
+        if (err) 
+            return Promise.reject(err);
     }
 );
 

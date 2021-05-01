@@ -1,0 +1,23 @@
+.theme-default{
+    //----Color
+    $color-primary: $green-darker;
+    $color-second: $white;
+    $color-third: $gray-dark;
+    $color-fourth: $gray-darker;
+    $color-fifth: $gray;
+    $color-sixth: $gray-light;
+    $color-seventh: $green;
+    $color-eighth: $black-light;
+    $color-ninth: $blue-light;
+    $color-tenth: $blue-lighter; 
+    $color-eleventh: $red;
+    $color-twelfth: $yellow;
+    //----Font
+    $font-primary: 'Roboto-Regular';
+    $font-second: 'Roboto-Medium';
+    $font-third: 'Roboto-Bold';
+    $font-fourth: 'Roboto-Light';
+
+    @import '../../general/general.scss';
+    @import '../../pages/blank.scss';
+}
