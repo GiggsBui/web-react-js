@@ -1,4 +1,5 @@
 import { NextPage } from 'next';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import SiteLayout from '../../components/SiteLayout';
 import BlankLayout from '../../layouts/blank';

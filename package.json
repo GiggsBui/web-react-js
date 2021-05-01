@@ -1,14 +1,14 @@
 {
-  "name": "your-flower-js",
+  "name": "web-react-js",
   "version": "v1.0.0",
   "license": "MIT",
   "author": {
-    "name": "Namtech",
-    "email": "admin@namtech.sg",
-    "url": "https://namtech.com.au"
+    "name": "giggs bui",
+    "email": "thanhthienbui123@gmail.com",
+    "url": "https://giggsbui.vn"
   },
   "scripts": {
-    "dev": "next dev -p 4200",
+    "dev": "next dev -p 4000",
     "build": "next build",
     "start": "next start",
     "type-check": "tsc --project tsconfig.json --pretty --noEmit",
@@ -21,13 +21,12 @@
     }
   },
   "dependencies": {
-    "@shopify/polaris": "^6.2.0",
-    "@shopify/react-i18n": "^5.3.0",
     "@zeit/next-sass": "1.0.1",
     "axios": "^0.21.1",
     "next": "latest",
     "next-redux-wrapper": "^6.0.2",
     "node-sass": "4.13.1",
+    "postcss": "^8.2.13",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.2",

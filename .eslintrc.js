@@ -15,27 +15,16 @@ module.exports = {
     extends: [
         "plugin:react/recommended",
         "eslint:recommended",
-        "plugin:import/errors",
-        "plugin:import/warnings",
-        "plugin:import/typescript",
-        "plugin:@typescript-eslint/eslint-recommended",
-        "plugin:@typescript-eslint/recommended"
     ],
     settings: {
-        'import/resolver': {
-          foo: { someConfig: value }
-        }
     },
     plugins: [
+        'react',
         'import'
     ],
     overrides: [
         {
             files: ['**/*.tsx'],
-            rules: {
-                'local/jsx-uses-my-pragma': 'error',
-                'local/jsx-uses-vars': 'error',
-            },
         },
     ],
     rules: {
@@ -68,11 +57,11 @@ module.exports = {
             named: 'never',
             asyncArrow: 'always'
         }],
-        'sort-imports': ['error', {
-            ignoreCase: true,
-            ignoreMemberSort: false,
-            ignoreDeclarationSort: true,
-            memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single']
+        "sort-imports": ["error", {
+            "ignoreCase": true,
+            "ignoreDeclarationSort": true,
+            "ignoreMemberSort": false,
+            "memberSyntaxSortOrder": ["none", "all", "multiple", "single"],
         }],
         'import/order': [
             'error',
