@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Index page should match the snapshot 1`] = `
+<main>
+  <h1>
+    Wellcome 
+    Giggs
+     join to Your Flower App
+  </h1>
+  <p>
+    Email: 
+    giggs@namtech.sg
+  </p>
+  <p>
+    Phone: 
+    84973637103
+  </p>
+  <p>
+    Address: 
+    165/16c Văn Thân, P8, Q6, TPHCM
+  </p>
+  <button
+    onClick={[Function]}
+  >
+    Click me
+  </button>
+</main>
+`;
