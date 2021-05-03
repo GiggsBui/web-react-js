@@ -1,10 +1,10 @@
 import { GetServerSideProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+// import { useDispatch, useSelector } from 'react-redux';
 import SiteLayout from '../components/SiteLayout';
 import BlankLayout from '../layouts/blank';
-import { incrementCounter } from '../store/actions/counterActions';
+// import { incrementCounter } from '../store/actions/counterActions';
 
 interface Props {
   user: {
@@ -20,8 +20,8 @@ const IndexPage: NextPage<Props> = ({ user }: any) => {
     useEffect(() => {
         router.push('/login');
     });
-    const counter = useSelector((state: any) => state.counter.value);
-    const dispatch = useDispatch();
+    // const counter = useSelector((state: any) => state && state.counter && state.counter.value);
+    // const dispatch = useDispatch();
     return (
         <BlankLayout>
             <SiteLayout>
@@ -30,10 +30,9 @@ const IndexPage: NextPage<Props> = ({ user }: any) => {
                     <p>Email: {user.email}</p>
                     <p>Phone: {user.phone}</p>
                     <p>Address: {user.address}</p>
-                    <p>counter: {counter}</p>
                     <button
                         onClick={() => {
-                            dispatch(incrementCounter());
+                            // dispatch(incrementCounter());
                         }}
                     >
                 Click me
