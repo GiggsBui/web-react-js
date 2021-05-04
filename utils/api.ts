@@ -1,27 +1,24 @@
 
 import axios from 'axios';
 import getConfig from 'next/config';
-import Router from 'next/router';
+import router from 'next/router';
 const { publicConfig } = getConfig();
-const $axios = axios.create({ baseURL: publicConfig.backendUrl});
+const $axios = axios.create({ baseURL: publicConfig.backendUrl });
 
-$axios.interceptors.request.use(
-    (req) => {
-        const token = '';
-        if (token) req.headers['Authorization'] = 'Bearer ' + token;
-        return req;
-    },
-    (err) => {
-        if (err) 
-            return Promise.reject(err);
-    }
-);
+$axios.interceptors.request.use(req => {
+    const token = '';
+    if (token) 
+        req.headers['Authorization'] = 'Bearer ' + token;
+    return req;
+}, err => {
+    if (err) 
+        return Promise.reject(err);
+});
 
-$axios.interceptors.response.use(
-    (res) => res,
-    (err) => {
+$axios.interceptors.response.use(res => res,
+    err => {
         if (err &&  err.response && err.response.status === 401) 
-            return Router.push('/about');
+            return router.push('/login');
     }
 );
 

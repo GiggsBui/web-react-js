@@ -1,35 +1,73 @@
-# Next.js with TypeScript and ESLint
+# web-core-v2 (NextJS + ReactJS)
+Web Core V2
 
-Starter code for a clean Next.js + TypeScript + ESLint project.
 
-More info here: https://paulintrognon.fr/blog/post/typescript-prettier-eslint-next-js
+## Configuration
+Clone `.env.sample` to `.env` in the same directory and update configuration for project.
 
-## Get started
 
-```sh
-# Install dependencies
-yarn
+## Quick Start
 
-# Start dev server
-yarn dev
+``` bash
+# install dependencies
+$ npm install # Or yarn install
 
-# Start tests (or yarn test --watch for watch mode)
-yarn test
+# serve with hot reload
+$ npm run dev
 
-# Lint (the dot is important)
-yarn lint .
+# build for staging and production
+$ npm run build
+$ npm start
+```
+
+For detailed explanation on how things work, checkout the [Next.js docs].
+
+### Quick Start With Docker
+- Start docker container: `docker-compose up` or `docker-compose up -d`
+- Refer to docker compose document in [here](https://docs.docker.com/compose/overview/#compose-documentation).
+
+> If `node_modules` is not exists, it will run `npm install` before into docker container.
+
+### Setup auto deployment
+
+- You should setup the testing step for make sure anything is good. Example:
+```
+npm install && npm run build
+```
+
+- Setup the deployment step like this:
+```
+- apk add --update openssh
+- ssh $STAG_USER@$STAG_ADDR "cd $STAG_PROJECT_PATH && git pull && docker system prune -f && docker-compose build && docker-compose up -d && exit;"
 ```
 
 
-## What is the difference with official with-typescript-eslint-jest
+## Workflow
 
-Vercel made an official similar example template: https://github.com/vercel/next.js/tree/canary/examples/with-typescript-eslint-jest
+### Branch prefixes
 
-Main differences are:
+- bugfix/
+- feature/
+- hotfix/
+- release/
 
-- ESLint and Prettier are integrated with VSCode out of the box (you just need VSCode's ESLint plugin).
-- Prettier is integrated with ESLint, so you do not need the Prettier plugin.
-- Improved lint-staged configuration: linting will only happen on staged files, not all files.
-- TypeScript types are checked before each commit, not just on `git push`.
-- It uses latest Husky v5 version
-- You can build it yourself by [reading the blog post](https://paulintrognon.fr/blog/typescript-prettier-eslint-next-js) :-)
+> Exp: feature/feature-name
+### Structure folder
+- assets: contains any assets un-compiled such as scss file, images, fonts
+- components: contains vue components
+- helper: contains any function support for convert data, format date,...
+- layouts: includes application layouts, layouts are used to change the look and feel of your page (ex: login page, signup page not need header, footer but home page, detail page need)
+- middleware: contains application middleware, define custom functions that can be run before rendering page
+- pages: contains vue pages
+- plugins: conains js plugin (axios, boostrap)
+- static: contains images, fonts (file not need compile)
+- store: contains reduce file
+### Gitflow workflow
+
+<div align="center">
+    <img src="https://wac-cdn.atlassian.com/dam/jcr:61ccc620-5249-4338-be66-94d563f2843c/05%20(2).svg?cdnVersion=411" height="400" />
+</div>
+
+### CICD pipeline deployment
+
+![CICD pipeline deployment](https://cdn-images-1.medium.com/max/2600/1*1kUhczYDfpkWXSFt0mI2dA.png)
