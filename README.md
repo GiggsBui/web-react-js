@@ -1,5 +1,5 @@
-# web-core-v2 (NextJS + ReactJS)
-Web Core V2
+# web-react-js (NextJS + ReactJS)
+Web React JS
 
 
 ## Configuration
